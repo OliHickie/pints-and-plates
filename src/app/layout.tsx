@@ -1,16 +1,5 @@
 import type { Metadata } from "next";
-import { Oswald, Josefin_Sans } from "next/font/google";
 import "./globals.css";
-
-// const oswald = Oswald({
-//   variable: "--font-oswald",
-//   subsets: ["latin"],
-// });
-
-// const josefinSans = Josefin_Sans({
-//   variable: "--font-josefin-sans",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-background h-[4000px]`}
+        className="bg-background h-[4000px] text-primary font-sans antialiased"
       >
         {children}
       </body>

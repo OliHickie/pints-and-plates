@@ -14,14 +14,14 @@ export default function Home() {
         /> */}
       </div>
       <h1 className="text-4xl font-bold font-heading">Pints & Plates</h1>
-      <p className="font-serif">
+      <p className="">
         Discover the best pairings of craft beers and delicious dishes. Pints & Plates helps you explore, match, and enjoy food and drink combinations curated for every taste.
       </p>
       <Button href="/explore" variant="primary" size="small">
         Explore Pairings
       </Button>
-      <Button href="/about" variant="secondary" size="normal">
-        Learn More
+      <Button href="/login" variant="secondary" size="normal">
+        Login
       </Button>
       <Button href="/contact" variant="ghost" size="large">
         Contact Us
