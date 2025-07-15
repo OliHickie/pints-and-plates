@@ -20,10 +20,8 @@ const Nav: React.FC = () => {
     <ul className="flex list-none text-accent">
       {links.map((link) => (
         <li key={link.href} className="mr-4 last:mr-0">
-          <Link href={link.href} passHref legacyBehavior>
-            <a className="no-underline text-inherit hover:text-blue-600">
+          <Link href={link.href} className="text-accent font-bold text-lg uppercase hover:text-accent-dark transition-colors">
               {link.label}
-            </a>
           </Link>
         </li>
       ))}
