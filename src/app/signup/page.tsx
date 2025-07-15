@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import bcrypt from "bcrypt";
 import { Button } from "@/components/core/Button";
 
 
@@ -10,6 +9,7 @@ export default function SignupPage() {
   const router = useRouter();
   const [form, setForm] = useState({ email: '', password: '', name: '', passwordCheck: '' });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -18,6 +18,7 @@ export default function SignupPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
     if (form.password !== form.passwordCheck) {
       setError('Passwords do not match');
@@ -29,6 +30,8 @@ export default function SignupPage() {
       body: JSON.stringify(form),
     });
 
+    setLoading(false);
+    
     if (res.ok) {
       router.push('/login');
     } else {
@@ -47,7 +50,7 @@ export default function SignupPage() {
         <input type="password" name="passwordCheck" placeholder="Retype Password" onChange={handleChange} required className="w-full p-2 border border-primary" />
         {error && <p className="text-red-500">{error}</p>}
 
-        <Button type="submit" variant="primary" size="normal" className="w-full">
+        <Button type="submit" variant="primary" size="normal" loading={loading} className="w-full">
           Sign Up
         </Button>
         <div className="flex space-x-2">
