@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Nav from "@/components/core/Nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body
         className="bg-background h-[4000px] text-primary font-sans antialiased"
       >
+        <Nav></Nav>
         {children}
       </body>
     </html>
