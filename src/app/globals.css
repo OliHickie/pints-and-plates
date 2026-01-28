@@ -4,8 +4,10 @@
 @theme {
   --color-background: #f6f1eb; 
   --color-primary: #353535; /* Dark Grey */
+  --color-primary-muted: #6A6A6A; 
   --color-secondary: #D9C2A3;  /* Warm Beige  */
   --color-accent: #FF9F43; /* Orange */
+  --color-accent-muted: #E68A3F;
 
   --color-blue: #5A8CAA;
   --color-green: #8BAA91;
