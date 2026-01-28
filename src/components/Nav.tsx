@@ -9,31 +9,30 @@ const Nav: React.FC = () => {
 
   const links = session
     ? [
-        { href: '/', label: 'Home' },
-        { href: '/dashboard', label: 'Dashboard' },
-        { href: '/profile', label: 'Profile' },
-        { href: '/logout', label: 'Logout' },
+        { href: '/', label: 'home' },
+        { href: '/dashboard', label: 'dashboard' },
+        { href: '/profile', label: 'profile' },
+        { href: '/logout', label: 'logout' },
       ]
     : [
-        { href: '/', label: 'Home' },
-        { href: '/login', label: 'Login' },
-        { href: '/signup', label: 'Sign Up' },
+        { href: '/', label: 'home' },
+        { href: '/login', label: 'login' },
       ];
 
   return (
-    <nav className="bg-primary w-full p-4 flex items-center justify-between">
+    <nav className="bg-background w-full p-4 flex items-center justify-between text-primary font-heading">
       {/* TODO: Replace the text logo with an SVG logo for better scalability and branding */}
-      <div className="flex flex-col text-accent font-heading leading-tight">
+      <div className="flex flex-col font-heading leading-tight">
         <span className="text-4xl md:text-4xl font-extrabold tracking-tight">
           Pints<span className="text-4xl">&</span>
         </span>
         <span className="text-3xl md:text-4xl tracking-tight font-extrabold -mt-3">Plates</span>
       </div>
 
-      <ul className="flex list-none text-accent">
+      <ul className="flex list-none ">
         {links.map((link) => (
           <li key={link.href} className="mr-4 last:mr-0">
-            <Link href={link.href} className="text-accent font-bold text-lg uppercase hover:text-accent-dark transition-colors">
+            <Link href={link.href} className=" font-bold text-lg transition-colors">
                 {link.label}
             </Link>
           </li>

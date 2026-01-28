@@ -2,16 +2,15 @@
 
 
 @theme {
-  --color-background: #353535;
-  --color-primary: #f0d6bb;
-  --color-primary-dark: #d1b18c;
-  --color-secondary: #9DBF8E;
-  --color-secondary-dark: #7A9A6C;
-  --color-accent: #FF9F43;
-  --color-accent-dark: #e68a2c;
-  --color-surface: #424242;
+  --color-background: #f6f1eb; 
+  --color-primary: #353535; /* Dark Grey */
+  --color-secondary: #D9C2A3;  /* Warm Beige  */
+  --color-accent: #FF9F43; /* Orange */
+
+  --color-blue: #5A8CAA;
+  --color-green: #8BAA91;
+
 
   --font-sans: "Poppins", sans-serif;
   --font-heading: "Oswald", serif;
 }
-

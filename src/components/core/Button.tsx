@@ -22,9 +22,9 @@ const sizeClasses = {
 };
 
 const variantClasses = {
-  primary: "bg-primary text-black hover:bg-primary-dark",
-  secondary: "bg-secondary text-black hover:bg-secondary-dark",
-  ghost: "bg-transparent border border-primary text-primary hover:bg-surface",
+  primary: "bg-accent text-primary",
+  secondary: "bg-transparent border border-primary text-primary hover:bg-secondary-dark",
+  ghost: "bg-transparent  text-primary hover:bg-surface",
 };
 
 export const Button = ({
