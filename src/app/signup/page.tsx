@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from "@/components/core/Button";
-
+import Link from 'next/link';
 
 export default function SignupPage() {
   const router = useRouter();
@@ -31,7 +31,7 @@ export default function SignupPage() {
     });
 
     setLoading(false);
-    
+
     if (res.ok) {
       router.push('/login');
     } else {
@@ -50,19 +50,21 @@ export default function SignupPage() {
         <input type="password" name="passwordCheck" placeholder="Retype Password" onChange={handleChange} required className="w-full p-2 border border-primary" />
         {error && <p className="text-red-500">{error}</p>}
 
-        <Button type="submit" variant="primary" size="normal" loading={loading} className="w-full">
-          Sign Up
-        </Button>
-        <div className="flex space-x-2">
-          <Button href="/login" variant="secondary" size="normal" className="w-1/2">
-          Login
-        </Button>
-        <Button href="/" variant="ghost" size="normal" className="w-1/2">
-          Back to Home
-        </Button>
-        </div>
-        
+        <div className="flex gap-3 flex-col-reverse sm:flex-row">
 
+          <Button href="/" variant='secondary' size="normal" className="w-full sm:w-1/2">
+            Back to Home
+          </Button>
+          <Button type="submit" variant="primary" size="normal" loading={loading} className="w-full sm:w-1/2">
+            Sign Up
+          </Button>
+        </div>
+        <p className='text-center'>
+          Already have an account?
+          <Link href="/login" className='underline hover:text-primary-muted ml-1.5'>
+            Log in
+          </Link>
+        </p>
       </form>
     </div>
   );

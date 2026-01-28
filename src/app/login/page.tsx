@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { Button } from "@/components/core/Button";
+import Link from 'next/link';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -41,18 +42,21 @@ export default function LoginPage() {
         <input type="email" name="email" placeholder="Email" onChange={handleChange} required className="w-full p-2 border border-primary" />
         <input type="password" name="password" placeholder="Password" onChange={handleChange} required className="w-full p-2 border border-primary" />
         {error && <p className="text-red-500">{error}</p>}
-
-        <Button type="submit" variant="primary" size="normal" className="w-full" loading={loading}>
-          Log in
-        </Button>
-        <div className="flex space-x-2">
-          <Button href="/signup" variant="secondary" size="normal" className="w-1/2">
-            Sign Up
-          </Button>
-          <Button href="/" variant="ghost" size="normal" className="w-1/2">
+        <div className="flex gap-3 flex-col-reverse sm:flex-row">
+          <Button href="/" variant="secondary" size="normal" className="w-full sm:w-1/2">
             Back to Home
           </Button>
+          <Button type="submit" variant="primary" size="normal" className="w-full sm:w-1/2" loading={loading}>
+            Log in
+          </Button>
         </div>
+        <p className='text-center'>
+          Don't have an account?
+          <Link href="/signup" className='underline hover:text-primary-muted ml-1.5'>
+            Sign up
+          </Link>
+        </p>
+
       </form>
     </div>
   );
