@@ -18,12 +18,14 @@ export default function SignupPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    setError('')
 
     if (form.password !== form.passwordCheck) {
       setError('Passwords do not match');
       return;
     }
+    
+    setLoading(true);
 
     const res = await fetch('/api/register', {
       method: 'POST',

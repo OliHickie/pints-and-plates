@@ -9,15 +9,15 @@ const Nav: React.FC = () => {
 
   const links = session
     ? [
-        { href: '/', label: 'home' },
-        { href: '/dashboard', label: 'dashboard' },
-        { href: '/profile', label: 'profile' },
-        { href: '/logout', label: 'logout' },
-      ]
+      { href: '/', label: 'home' },
+      { href: '/dashboard', label: 'dashboard' },
+      { href: '/profile', label: 'profile' },
+      { href: '/logout', label: 'logout' },
+    ]
     : [
-        { href: '/', label: 'home' },
-        { href: '/login', label: 'login' },
-      ];
+      { href: '/', label: 'home' },
+      { href: '/login', label: 'login' },
+    ];
 
   return (
     <nav className="bg-background w-full p-4 flex items-center justify-between text-primary font-heading">
@@ -29,11 +29,11 @@ const Nav: React.FC = () => {
         <span className="text-3xl md:text-4xl tracking-tight font-extrabold -mt-3">Plates</span>
       </div>
 
-      <ul className="flex list-none ">
+      <ul className="flex list-none mr-6 space-x-6">
         {links.map((link) => (
-          <li key={link.href} className="mr-4 last:mr-0">
+          <li key={link.href}>
             <Link href={link.href} className=" font-bold text-lg transition-colors">
-                {link.label}
+              {link.label}
             </Link>
           </li>
         ))}
