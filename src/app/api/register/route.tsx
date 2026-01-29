@@ -12,10 +12,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
 
-  const { email, password, name } = body;
+  const { email, password, firstName, lastName } = body;
 
-  if (!email || !password || !name) {
-    return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
+  if (!email || !password || !firstName || !lastName) {
+    return NextResponse.json({ error: `Missing field(s)` }, { status: 400 });
   }
 
   try {
@@ -27,12 +27,17 @@ export async function POST(request: Request) {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+    const createdAt = new Date();
+    const updatedAt = new Date();
 
     await prisma.user.create({
       data: {
         email,
-        name,
+        firstName,
+        lastName,
         hashedPassword,
+        createdAt,
+        updatedAt
       },
     });
 

@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function SignupPage() {
   const router = useRouter();
-  const [form, setForm] = useState({ email: '', password: '', name: '', passwordCheck: '' });
+  const [form, setForm] = useState({ email: '', password: '', firstName: '', lastName: '', passwordCheck: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -46,7 +46,8 @@ export default function SignupPage() {
     <div className="max-w-md mx-auto mt-10">
       <h2 className="text-xl font-bold mb-4">Sign Up</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <input type="text" name="name" placeholder="Name" onChange={handleChange} required className="w-full p-2 border border-primary" />
+        <input type="text" name="firstName" placeholder="First Name" onChange={handleChange} required className="w-full p-2 border border-primary" />
+        <input type="text" name="lastName" placeholder="Last Name" onChange={handleChange} required className="w-full p-2 border border-primary" />
         <input type="email" name="email" placeholder="Email" onChange={handleChange} required className="w-full p-2 border border-primary" />
         <input type="password" name="password" placeholder="Password" onChange={handleChange} required className="w-full p-2 border border-primary" />
         <input type="password" name="passwordCheck" placeholder="Retype Password" onChange={handleChange} required className="w-full p-2 border border-primary" />
