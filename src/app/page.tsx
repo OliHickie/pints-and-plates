@@ -23,9 +23,6 @@ export default function Home() {
       <Button href="/login" variant="secondary" size="normal">
         Login
       </Button>
-      <Button href="/contact" variant="ghost" size="large">
-        Contact Us
-      </Button>
 
     </div>
   );

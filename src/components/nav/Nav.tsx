@@ -4,7 +4,11 @@ import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 
 const Nav: React.FC = () => {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
+    return;
+  }
 
   const links = session
     ? [
