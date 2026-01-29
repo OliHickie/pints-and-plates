@@ -27,13 +27,18 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (status === "authenticated") {
-      fetch("/api/user")
-        .then((res) => res.json())
-        .then((data) => {
-          setUser(data);
-          setLoading(false);
+      try {
+        fetch("/api/user")
+          .then((res) => res.json())
+          .then((data) => {
+            setUser(data);
+            setLoading(false);
           console.log("User fetched:", data);
         });
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        setLoading(false);
+      }
     }
 
     if (status === "unauthenticated") {
